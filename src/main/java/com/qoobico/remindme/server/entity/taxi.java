@@ -6,30 +6,37 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "remind")
-public class remind {
+@Table(name = "taxi")
+public class taxi {
 
     @Id
     @GenericGenerator(name = "increment", strategy = "increment")
-    private long id;
+    private int id;
 
-    @Column(name = "title", nullable = false, length = 50)
+    @Column(name = "taxiname", nullable = false, length = 50)
     private String title;
 
-    @Column(name = "remind_date", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date remindDate;
+    @Column(name = "rubkm", nullable = true)
+    private int rubkm;
 
-    public remind() {
+    @Column(name = "rubin", nullable = true)
+    private int rubin;
+
+    @Column(name = "phone", nullable = false, length = 50)
+    private String phone;
+
+
+
+    public taxi() {
     }
 
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
+  /*  public void setId(long id) {
         this.id = id;
-    }
+    }*/
 
     public String getTitle() {
         return title;
@@ -39,11 +46,8 @@ public class remind {
         this.title = title;
     }
 
-    public Date getRemindDate() {
-        return remindDate;
+    public String getTaxiPhone() {
+        return phone;
     }
 
-    public void setRemindDate(Date remindDate) {
-        this.remindDate = remindDate;
-    }
 }
