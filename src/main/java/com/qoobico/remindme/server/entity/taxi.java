@@ -46,6 +46,14 @@ public class taxi {
         this.title = title;
     }
 
+    public int getRubkm() {
+        return rubkm;
+    }
+
+    public int getRubin() {
+        return rubkm;
+    }
+
     public String getTaxiPhone() {
         return phone;
     }

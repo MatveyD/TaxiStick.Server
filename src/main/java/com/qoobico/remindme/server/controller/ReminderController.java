@@ -5,6 +5,7 @@ import com.qoobico.remindme.server.service.ReminderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 
 @RestController
@@ -18,6 +19,13 @@ public class ReminderController {
     public List<taxi> getAllTaxi() {
         return service.getAll();
     }
+
+    @RequestMapping(value = "/cheap", method = RequestMethod.GET)
+    @ResponseBody
+    public List<taxi> getCheapTaxi() {
+        return service.getCheap();
+    }
+
 
     @RequestMapping(value = "/reminders/{id}", method = RequestMethod.GET)
     @ResponseBody
